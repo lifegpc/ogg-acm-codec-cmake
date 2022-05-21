@@ -1,0 +1,6 @@
+[submodule "src/ogg"]
+	path = src/ogg
+	url = https://github.com/xiph/ogg
+[submodule "src/vorbis"]
+	path = src/vorbis
+	url = https://github.com/xiph/vorbis
