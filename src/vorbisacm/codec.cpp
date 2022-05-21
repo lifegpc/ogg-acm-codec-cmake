@@ -980,7 +980,7 @@ LRESULT CacmDriverOggVorbis::dmStreamOpen(LPARAM lParam1, LPARAM lParam2)
 			if(lRes==MMSYSERR_NOERROR) {
 				// ストリームインスタンス更新
 				ASSERT(padsi->dwDriver==0);
-				padsi->dwDriver  = (DWORD)p;
+				padsi->dwDriver  = (LONG_PTR)p;
 				padsi->fdwDriver = STREAMMODE_VORBIS_DECODE;
 			} else {
 				delete p;
