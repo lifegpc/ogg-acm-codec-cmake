@@ -251,7 +251,7 @@ void Trace(LPCTSTR form, ...);
 #endif
 
 #ifndef ASSERT
-#ifdef _DEBUG
+#if _DEBUG && !defined(_M_ARM64) && !defined(_M_AMD64) && !defined(_M_X64)
 #define ASSERT(exp)	BREAK(exp,#exp)
 #else
 #define ASSERT(exp)	((void)0)
@@ -259,7 +259,7 @@ void Trace(LPCTSTR form, ...);
 #endif
 
 #ifndef ASSUME
-#ifdef _DEBUG
+#if _DEBUG && !defined(_M_ARM64) && !defined(_M_AMD64) && !defined(_M_X64)
 #define ASSUME(exp)	BREAK(exp,#exp)
 #else
 #define ASSUME(exp)	(__assume(exp))
@@ -267,7 +267,7 @@ void Trace(LPCTSTR form, ...);
 #endif
 
 #ifndef VERIFY
-#ifdef _DEBUG
+#if _DEBUG && !defined(_M_ARM64) && !defined(_M_AMD64) && !defined(_M_X64)
 #define VERIFY(exp)	BREAK(exp,#exp)
 #else
 #define VERIFY(exp)	((void)exp)			// ASSERTと違いexpは常に評価される
